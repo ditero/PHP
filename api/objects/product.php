@@ -36,7 +36,9 @@ function create(){
     $this->price=htmlspecialchars(strip_tags($this->price));
     $this->description=htmlspecialchars(strip_tags($this->description));
     $this->category_id=htmlspecialchars(strip_tags($this->category_id));
-    $this->created=htmlspecialchars(strip_tags($this->created));
+
+    //get time-stamp for 'created' field
+    $this->created= date('Y-m-d H:i:S');
  
     // bind values
     $stmt->bindParam(":name", $this->name);
